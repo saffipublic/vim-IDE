@@ -37,11 +37,12 @@ Install
 
 Backup your **~/.vimrc** and your **~/.vim** if you want
 
-    cd ~/.vim
-    git clone git://github.com/dmonllao/vim-IDE.git .
-    ln -s ~/.vim/.vimrc ~/.vimrc
-    git submodule init
-    git submodule update
+    mv ~/.vim ~/.vim.bak
+    mkdir -p ~/.vim
+    git clone git://github.com/dmonllao/vim-IDE.git ~/.vim
+    ln -sf ~/.vim/.vimrc ~/.vimrc
+    git -C ~/.vim submodule init
+    git -C ~/.vim submodule update
 
 (Optional) Copy/add your own **.vimrc** rules and overrides to **~/.vim/custom.vim**, more info in **~/.vim/custom.vim.dist**; note that your settings may conflict with the ones set by vim-IDE.
 
